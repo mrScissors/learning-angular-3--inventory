@@ -1,0 +1,68 @@
+
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="productname" matSortDirection="" >
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    
+    <ng-container matColumnDef="productname">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Product</b> </mat-header-cell>
+      <mat-cell *matCellDef="let element"><button style="color: darkgreen;" mat-stroked-button routerLink="/{{element.id}}"> {{element.productname}}</button> </mat-cell>
+    </ng-container>
+  
+    
+    <ng-container matColumnDef="category">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Category</b> </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.category}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="availableunits">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Available Units</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.availableunits}} </mat-cell>
+      </ng-container>
+  
+      
+    <ng-container matColumnDef="unitprice">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Unit Price</b> </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.unitprice}} </mat-cell>
+    </ng-container>
+  
+    
+    <ng-container matColumnDef="tags">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Tag</b> </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.tags}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="lastupated">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Last Updated</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastupated}} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="location">
+        <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Location</b> </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.location}} </mat-cell>
+     </ng-container>
+
+
+    <ng-container matColumnDef="description">
+       <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Description</b> </mat-header-cell>
+       <mat-cell *matCellDef="let element"> {{element.description}} </mat-cell>
+     </ng-container>
+
+
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    
+
+</mat-table>
+<mat-paginator
+[pageSize]="10"
+[pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
+
+
+  
+<button style="color: crimson" mat-stroked-button routerLink="data-entry">Add Data</button>
