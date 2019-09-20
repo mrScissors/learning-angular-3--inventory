@@ -44,7 +44,7 @@ describe('FormEntryComponent', () => {
     expect(component.dataentry.valid).toBeFalsy();
   });
 
-  it('productname field validity', () => {
+  it('productname field', () => {
     let productname = component.dataentry.controls['productname'];
     expect(productname.valid).toBeFalsy();
   });
@@ -56,10 +56,10 @@ describe('FormEntryComponent', () => {
     expect(errors['required']).toBeTruthy();
   });
 
-  it('productname field length less than 4 error', () => {
+  it('productname field length less than 2 error', () => {
     let errors = {};
     let productname = component.dataentry.controls['productname'];
-    productname.setValue("aaa");
+    productname.setValue("a");
     errors = productname.errors || {};
     expect(errors['minlength']).toBeTruthy();
   });
@@ -67,7 +67,7 @@ describe('FormEntryComponent', () => {
 
 
 
-  it('category field validity', () => {
+  it('category field', () => {
     let category = component.dataentry.controls['category'];
     expect(category.valid).toBeFalsy();
   });
@@ -95,7 +95,7 @@ describe('FormEntryComponent', () => {
     expect(errors['maxlength']).toBeTruthy();
   });
 
-  it('tags field validity', () => {
+  it('tags field', () => {
     let tags = component.dataentry.controls['tags'];
     expect(tags.valid).toBeFalsy();
   });
@@ -107,16 +107,31 @@ describe('FormEntryComponent', () => {
     expect(errors['required']).toBeTruthy();
   });
 
-  it('tags field length less than 4 error', () => {
+  it('tags field length less than 2 error', () => {
     let errors = {};
     let tags=component.dataentry.controls['tags'];
-    tags.setValue("aa");
+    tags.setValue("a");
     errors = tags.errors || {};
     expect(errors['minlength']).toBeTruthy(); 
   });
 
 
-  it('location field validity', () => {
+  it('lastupdated field', () => {
+    let tags = component.dataentry.controls['lastupdated'];
+    expect(tags.valid).toBeFalsy();
+  });
+
+  it('lastupdated field error', () => {
+    let errors = {};
+    let tags = component.dataentry.controls['lastupdated'];
+    errors = tags.errors || {};
+    expect(errors['required']).toBeTruthy();
+  });
+
+
+
+
+  it('location field', () => {
     let location = component.dataentry.controls['location'];
     expect(location.valid).toBeFalsy();
   });
@@ -129,17 +144,17 @@ describe('FormEntryComponent', () => {
   });
 
 
-  it('location field length less than 4 error', () => {
+  it('location field length less than 2 error', () => {
     let errors = {};
     let location = component.dataentry.controls['location'];
-    location.setValue("aaa");
+    location.setValue("a");
     errors = location.errors || {};
     expect(errors['minlength']).toBeTruthy();
   });
 
 
 
-  it('description field validity', () => {
+  it('description field ', () => {
     let description = component.dataentry.controls['description'];
     expect(description.valid).toBeFalsy();
   });
@@ -151,10 +166,10 @@ describe('FormEntryComponent', () => {
     expect(errors['required']).toBeTruthy();
   });
 
-  it('description field less than 4 error', () => {
+  it('description field less than 2 error', () => {
     let errors = {};
     let description = component.dataentry.controls['description'];
-    description.setValue("aaa");
+    description.setValue("a");
     errors = description.errors || {};
     expect(errors['minlength']).toBeTruthy();
   });

@@ -1,5 +1,6 @@
 
 
+
 <form [formGroup]="dataentry1" (ngSubmit)="onSubmit1()">
    <div class="form-group">
         <mat-form-field>
@@ -11,7 +12,7 @@
         </mat-form-field>
         <br>
         <mat-form-field>
-            <input matInput formControlName="availableunits" placeholder="Available Units" type = number class="form-control">
+            <input matInput formControlName="availableunits" placeholder="Available Units" type = number class="form-control" >
         </mat-form-field>
         <br>
         <mat-form-field>
@@ -19,7 +20,12 @@
         </mat-form-field>
         <br>
         <mat-form-field>
-            <input matInput formControlName="tags" placeholder="tags" class="form-control">
+            <input matInput formControlName="tags" placeholder="tags" class="form-control" >
+        </mat-form-field>
+        <br>
+
+        <mat-form-field>
+            <input matInput   formControlName="lastupdated" placeholder="Last Updated" class="form-control" >
         </mat-form-field>
         <br>
        
@@ -29,10 +35,11 @@
     
         <br>
         <mat-form-field>
-            <textarea matInput formControlName="description" placeholder="Description" class="form-control"></textarea>
+            <textarea matInput formControlName="description" placeholder="Description" class="form-control" ></textarea>
         </mat-form-field>
         <br>
-        <button [disabled]="!dataentry1.valid" style="color: crimson" mat-stroked-button type="submit">Update data</button>
+        <button style="color: crimson" mat-stroked-button type="submit">Update data</button>
     </div>
 </form>
   
+

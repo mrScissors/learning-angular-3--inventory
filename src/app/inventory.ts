@@ -4,7 +4,7 @@ export interface Iinventory{
     availableunits: number,
     unitprice: number,
     tags: string,
-    lastupated: string,
+    lastupdated: string,
     location: string,
     description: string
 }

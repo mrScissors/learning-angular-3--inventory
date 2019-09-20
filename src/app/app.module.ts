@@ -12,13 +12,15 @@ import { MaterialModule } from './material/material.module';
 import { FormEntryComponent } from './form-entry/form-entry.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { UpdateFormComponent } from './update-form/update-form.component';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InventoryListComponent,
     FormEntryComponent,
-    UpdateFormComponent
+    UpdateFormComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,7 @@ import { UpdateFormComponent } from './update-form/update-form.component';
     ReactiveFormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [DialogComponent]
 })
 export class AppModule { }

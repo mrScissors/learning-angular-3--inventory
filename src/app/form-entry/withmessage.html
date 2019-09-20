@@ -1,0 +1,98 @@
+
+
+<form [formGroup]="dataentry" (ngSubmit)="onSubmit()">
+   <div class="form-group">
+        <mat-form-field>
+        <input  matInput formControlName="productname" placeholder="Product Name" class="form-control" type="text">
+        </mat-form-field>
+        
+        <br>
+        <div *ngIf="dataentry.get('productname').invalid && dataentry.get('productname').touched">
+            <small *ngIf="dataentry.get('productname').errors?.required" class="text-danger">Product name is required</small>
+            <small *ngIf="dataentry.get('productname').errors?.minlength" class="text-danger">Product name must be at least 2 characters</small>
+          
+        </div>
+
+        <br>
+        
+        <mat-form-field>
+            <input matInput formControlName="category" placeholder="Category" class="form-control">
+        </mat-form-field>
+
+        <br>
+        <div *ngIf="dataentry.get('category').invalid && dataentry.get('category').touched">
+            <small *ngIf="dataentry.get('category').errors?.required" class="text-danger">Product name is required</small>
+            <small *ngIf="dataentry.get('category').errors?.minlength" class="text-danger">Category must be equal to 3 characters</small>
+            <small *ngIf="dataentry.get('category').errors?.maxlength" class="text-danger">Category must be equal to 3 characters</small>
+          
+        </div>
+        <br>
+        <mat-form-field>
+            <input matInput type="number" formControlName="availableunits" placeholder="Available Units" class="form-control">
+        </mat-form-field>
+
+        <br>
+        <div *ngIf="dataentry.get('availableunits').invalid && dataentry.get('availableunits').touched">
+            <small *ngIf="dataentry.get('availableunits').errors?.required" class="text-danger">Available units is required</small>
+          
+        </div>
+        <br>
+
+        <mat-form-field>
+            <input matInput type="number" formControlName="unitprice" placeholder="Unit Price" class="form-control">
+        </mat-form-field>
+
+        <br>
+        <div *ngIf="dataentry.get('unitprice').invalid && dataentry.get('unitprice').touched">
+            <small *ngIf="dataentry.get('unitprice').errors?.required" class="text-danger">unit price is required</small>
+
+        </div>
+        <br>
+        <mat-form-field>
+            <input matInput formControlName="tags" placeholder="tags" class="form-control">
+        </mat-form-field>
+
+        <br>
+        <div *ngIf="dataentry.get('tags').invalid && dataentry.get('tags').touched">
+            <small *ngIf="dataentry.get('tags').errors?.required" class="text-danger">Tag is required</small>
+            <small *ngIf="dataentry.get('tags').errors?.minlength" class="text-danger">Tag must be at least 2 characters</small>
+          
+        </div>
+        <br>
+
+        <mat-form-field>
+            <input matInput  type="date" formControlName="lastupdated" placeholder="Last Updated" class="form-control">
+        </mat-form-field>
+
+        <br>
+        <div *ngIf="dataentry.get('date').invalid && dataentry.get('date').touched">
+            <small *ngIf="dataentry.get('date').errors?.required" class="text-danger">Date is required</small>
+        
+        </div>
+        <br>
+        <mat-form-field>
+                <input matInput formControlName="location" placeholder="Location Area" class="form-control">
+        </mat-form-field>
+    
+        <br>
+        <div *ngIf="dataentry.get('location').invalid && dataentry.get('location').touched">
+            <small *ngIf="dataentry.get('location').errors?.required" class="text-danger">Location is required</small>
+            <small *ngIf="dataentry.get('location').errors?.minlength" class="text-danger">Location must be at least 2 characters</small>
+          
+        </div>
+        <br>
+        <mat-form-field>
+            <textarea matInput formControlName="description" placeholder="Description" class="form-control"></textarea>
+        </mat-form-field>
+
+        <br>
+        <div *ngIf="dataentry.get('description').invalid && dataentry.get('description').touched">
+            <small *ngIf="dataentry.get('description').errors?.required" class="text-danger">Description is required</small>
+            <small *ngIf="dataentry.get('description').errors?.minlength" class="text-danger">Description must be at least 2 characters</small>
+          
+        </div>
+        <br>
+        <button [disabled]="!dataentry.valid" style="color: crimson" mat-stroked-button type="submit">Add data</button>
+    </div>
+</form>
+  

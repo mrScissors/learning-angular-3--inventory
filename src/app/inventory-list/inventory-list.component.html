@@ -1,5 +1,5 @@
 
-<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="productname" matSortDirection="" >
+<mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort matSortActive="time" matSortDirection="desc" >
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -34,9 +34,9 @@
     </ng-container>
 
 
-    <ng-container matColumnDef="lastupated">
+    <ng-container matColumnDef="lastupdated">
         <mat-header-cell *matHeaderCellDef mat-sort-header> <b>Last Updated</b> </mat-header-cell>
-        <mat-cell *matCellDef="let element"> {{element.lastupated}} </mat-cell>
+        <mat-cell *matCellDef="let element"> {{element.lastupdated}} </mat-cell>
     </ng-container>
 
 

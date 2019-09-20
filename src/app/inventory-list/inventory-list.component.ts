@@ -45,6 +45,6 @@ export class InventoryListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
  
-  displayedColumns: string[] = ['productname', 'category', 'availableunits', 'unitprice', 'tags', 'lastupated', 'location', 'description'];
+  displayedColumns: string[] = ['productname', 'category', 'availableunits', 'unitprice', 'tags', 'lastupdated', 'location', 'description'];
   
 }
